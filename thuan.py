@@ -152,8 +152,8 @@ def main():
             print(f"✅ Video đã được tạo: {output_file}")
 
             # Xóa file tạm
-            cleanup = input("Xóa file tạm? (y/n): ").strip().lower()
-            if cleanup == 'y':
+            cleanup = True
+            if cleanup:
                 import shutil
                 shutil.rmtree(output_dir)
                 os.remove(concat_file)
