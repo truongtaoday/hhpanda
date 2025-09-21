@@ -99,7 +99,7 @@ def main():
     png_headers_found = 0
 
     for i, ts_url in enumerate(ts_urls, 1):
-        filename_ts = os.path.basename(ts_url).split('?')[0]  # Loại bỏ query params
+        filename_ts = f"{i:05d}.ts"  # i là số thứ tự, định dạng 5 chữ số: 00001.ts, 00002.ts...
         filepath = os.path.join(output_dir, filename_ts)
 
         print_progress(i-1, total_files, filename_ts)
@@ -168,3 +168,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
